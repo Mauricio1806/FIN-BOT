@@ -115,7 +115,7 @@ def _market_section(key: str, conf: dict, analyses: list[Analysis], plan: dict |
           <div class="card"><div class="l">Em baixa</div><div class="v">{breadth['em_baixa']}/{breadth['n']}</div></div>
           <div class="card"><div class="l">Laterais</div><div class="v">{breadth['laterais']}/{breadth['n']}</div></div>
         </div>"""
-        bullets = "".join(f'<div class="insight">{i}</div>' for i in insights_text(analyses, breadth))
+        bullets = "".join(f'<div class="insight">{i}</div>' for i in insights_text(analyses, breadth, macro if key=='brasil' else None, key))
         insights_html = f"""<h2>🧠 Leitura do mercado</h2>
           <span class="regime {regime}">{regime}</span>{cards}
           <div style="margin-top:14px">{bullets}</div>"""
