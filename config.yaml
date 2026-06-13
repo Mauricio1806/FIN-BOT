@@ -1,9 +1,9 @@
-# FIN-BOT v3 — configuração multimercado
+# FIN-BOT v3.3 — configuração multimercado completa
 period: "2y"
 backtest_period: "5y"
 min_score: 35
 cdi_anual: 0.105
-aporte_mensal: 2000
+aporte_mensal: 2000   # usado para sugerir distribuição na página
 
 markets:
   brasil:

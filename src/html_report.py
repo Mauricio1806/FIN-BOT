@@ -179,7 +179,7 @@ def build_full_page(market_data: dict, macro: dict | None = None) -> str:
 <meta http-equiv="refresh" content="900">
 <title>FIN-BOT — Painel global</title><style>{_CSS}</style></head><body>
 <h1>📈 FIN-BOT <span class="live">AO VIVO</span></h1>
-<p class="sub">Atualizado em {now} (horário de Salvador) · próx. atualização em até 15 min</p>
+<p class="sub">Atualizado em {now} (horário de Salvador) · próx. atualização em até 15 min · <a href="corretoras.html" style="color:#60a5fa;text-decoration:none;border:1px solid #1e2a4a;padding:4px 10px;border-radius:6px;margin-left:6px">🏦 Ver corretoras</a></p>
 <div class="tabs">{tabs}</div>
 {sections}
 <p class="disc">Score 0–100 = condição técnica relativa (40 pts tendência, 20 MACD, 20 RSI,

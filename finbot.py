@@ -27,6 +27,7 @@ from src.backtest import run_backtest
 from src.macro import get_macro, format_macro
 from src.renda_fixa import fetch_tesouro, format_tesouro, regua_ofertas
 from src.html_report import build_full_page, save_html
+from src.brokers import save_brokers_page
 
 CONFIG_PATH = Path(__file__).resolve().parent / "config.yaml"
 

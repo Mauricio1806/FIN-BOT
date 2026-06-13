@@ -1,0 +1,257 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FIN-BOT — Corretoras</title><style>
+:root{color-scheme:dark}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:#0b1020;
+  color:#e2e8f0;padding:20px;max-width:1100px;margin:0 auto;line-height:1.55}
+h1{font-size:1.6rem;margin-bottom:4px}
+h2{font-size:1.15rem;margin:28px 0 14px;color:#93c5fd}
+.sub{color:#64748b;font-size:.85rem;margin-bottom:16px}
+.back{display:inline-block;color:#60a5fa;text-decoration:none;font-size:.88rem;
+  margin-bottom:16px;padding:6px 12px;border:1px solid #1e2a4a;border-radius:8px}
+.back:hover{background:#16213f}
+.intro{background:#111a33;border:1px solid #1e2a4a;border-left:3px solid #3b82f6;
+  border-radius:10px;padding:14px 18px;margin-bottom:24px;font-size:.92rem}
+.broker{background:#111a33;border:1px solid #1e2a4a;border-radius:12px;
+  padding:18px 20px;margin-bottom:14px}
+.broker h3{font-size:1.05rem;color:#fff;margin-bottom:4px;display:flex;
+  align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.broker h3 a{font-size:.78rem;background:#3b82f6;color:#fff;padding:5px 12px;
+  border-radius:99px;text-decoration:none;font-weight:600}
+.broker h3 a:hover{background:#2563eb}
+.meta{font-size:.78rem;color:#64748b;margin-bottom:10px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin-top:10px}
+.grid div{background:#0b1020;border:1px solid #1e2a4a;padding:9px 12px;border-radius:8px;font-size:.85rem}
+.grid b{color:#93c5fd;font-size:.7rem;text-transform:uppercase;letter-spacing:.04em;display:block;margin-bottom:3px}
+.atencao{background:#7f1d1d33;border-left:3px solid #f87171;padding:9px 13px;
+  border-radius:8px;margin-top:10px;font-size:.85rem;color:#fca5a5}
+.disc{margin-top:32px;color:#475569;font-size:.78rem;line-height:1.5}
+@media(max-width:640px){body{padding:12px}h1{font-size:1.3rem}}
+</style></head><body>
+<a href="index.html" class="back">← Voltar ao painel</a>
+<h1>🏦 Corretoras por mercado</h1>
+<p class="sub">Tabela comparativa · dados verificados em 13/06/2026 · sempre confirme no site oficial</p>
+
+<div class="intro">
+<b>Como ler esta página:</b> as corretoras estão agrupadas por mercado-alvo.
+Para a B3 (🇧🇷), praticamente todas zeraram corretagem em ações/FIIs/RF — o que
+diferencia é catálogo de produtos, qualidade da plataforma e suporte. Para os
+EUA (🇺🇸), o que pesa é o <b>spread cambial</b> (custo real de conversão BRL→USD),
+não a corretagem. Para Europa (🇪🇺) e China/Ásia (🇨🇳), na prática só a
+<b>Interactive Brokers</b> dá acesso direto de quem mora no Brasil; o resto exige
+mudança de residência fiscal.
+</div>
+
+<h2>🇧🇷 Mercado brasileiro (B3 — ações, FIIs, RF, Tesouro Direto)</h2>
+
+    <div class="broker">
+      <h3>XP Investimentos <a href="https://www.xpi.com.br" target="_blank" rel="noopener">Site oficial →</a></h3>
+      <div class="meta">Regulador: CVM/BCB · Fundada em 2001 · Foco: Ações, FIIs, RF, fundos, BDRs</div>
+      <div class="grid">
+        <div><b>Corretagem ações</b>R$ 8,90/ordem (swing); R$ 2,90 day trade</div>
+        <div><b>Renda fixa</b>Isenta em RF, FIIs e fundos</div>
+        <div><b>Custódia</b>Isenta</div>
+      </div>
+      <div class="grid" style="margin-top:8px">
+        <div style="grid-column:1/-1"><b>Diferencial</b>Maior plataforma do BR; mesa de operações; assessor</div>
+      </div>
+      <div class="atencao">⚠️ <b>Atenção:</b> Taxa de ações por ordem pesa em aportes pequenos</div>
+    </div>
+    <div class="broker">
+      <h3>Rico (grupo XP) <a href="https://www.rico.com.vc" target="_blank" rel="noopener">Site oficial →</a></h3>
+      <div class="meta">Regulador: CVM/BCB · Fundada em 2008 · Foco: Ações, FIIs, RF, fundos</div>
+      <div class="grid">
+        <div><b>Corretagem ações</b>Isenta para ações e FIIs</div>
+        <div><b>Renda fixa</b>Isenta</div>
+        <div><b>Custódia</b>Isenta</div>
+      </div>
+      <div class="grid" style="margin-top:8px">
+        <div style="grid-column:1/-1"><b>Diferencial</b>Corretagem zero em RV; plataforma simples</div>
+      </div>
+      <div class="atencao">⚠️ <b>Atenção:</b> Faz parte do grupo XP; mesa de operações cobrada à parte</div>
+    </div>
+    <div class="broker">
+      <h3>BTG Pactual <a href="https://www.btgpactual.com" target="_blank" rel="noopener">Site oficial →</a></h3>
+      <div class="meta">Regulador: CVM/BCB · Fundada em 1983 · Foco: Ações, FIIs, RF, fundos exclusivos, private</div>
+      <div class="grid">
+        <div><b>Corretagem ações</b>Isenta para ações e FIIs</div>
+        <div><b>Renda fixa</b>Isenta</div>
+        <div><b>Custódia</b>Isenta</div>
+      </div>
+      <div class="grid" style="margin-top:8px">
+        <div style="grid-column:1/-1"><b>Diferencial</b>Banco de investimento; produtos exclusivos; conta global</div>
+      </div>
+      <div class="atencao">⚠️ <b>Atenção:</b> Plataforma mais técnica que apps de banco digital</div>
+    </div>
+    <div class="broker">
+      <h3>Banco Inter <a href="https://www.bancointer.com.br" target="_blank" rel="noopener">Site oficial →</a></h3>
+      <div class="meta">Regulador: CVM/BCB · Fundada em 1994 · Foco: Conta + ações, FIIs, RF, ETFs internacionais</div>
+      <div class="grid">
+        <div><b>Corretagem ações</b>Isenta para ações e FIIs</div>
+        <div><b>Renda fixa</b>Isenta</div>
+        <div><b>Custódia</b>Isenta</div>
+      </div>
+      <div class="grid" style="margin-top:8px">
+        <div style="grid-column:1/-1"><b>Diferencial</b>Conta + investimentos no mesmo app; integração com Pix</div>
+      </div>
+      <div class="atencao">⚠️ <b>Atenção:</b> Plataforma de investimento menos sofisticada que XP/BTG</div>
+    </div>
+    <div class="broker">
+      <h3>NuInvest (Nubank) <a href="https://nuinvest.com.br" target="_blank" rel="noopener">Site oficial →</a></h3>
+      <div class="meta">Regulador: CVM/BCB · Fundada em 2011 (Easynvest) · Foco: Ações, FIIs, RF, ETFs</div>
+      <div class="grid">
+        <div><b>Corretagem ações</b>Isenta</div>
+        <div><b>Renda fixa</b>Isenta</div>
+        <div><b>Custódia</b>Isenta</div>
+      </div>
+      <div class="grid" style="margin-top:8px">
+        <div style="grid-column:1/-1"><b>Diferencial</b>Integrado ao Nubank; UX simples para iniciantes</div>
+      </div>
+      <div class="atencao">⚠️ <b>Atenção:</b> Catálogo de RF menor; sem mesa de operações</div>
+    </div>
+    <div class="broker">
+      <h3>Clear (grupo XP) <a href="https://www.clear.com.br" target="_blank" rel="noopener">Site oficial →</a></h3>
+      <div class="meta">Regulador: CVM/BCB · Fundada em 2010 · Foco: Trading (day/swing), ações, futuros</div>
+      <div class="grid">
+        <div><b>Corretagem ações</b>Isenta para ações e FIIs (swing)</div>
+        <div><b>Renda fixa</b>Isenta</div>
+        <div><b>Custódia</b>Isenta</div>
+      </div>
+      <div class="grid" style="margin-top:8px">
+        <div style="grid-column:1/-1"><b>Diferencial</b>Plataforma profissional de trading; gráficos avançados</div>
+      </div>
+      <div class="atencao">⚠️ <b>Atenção:</b> Foco em trader ativo, não em aporte de longo prazo</div>
+    </div>
+    <div class="broker">
+      <h3>Tesouro Direto (B3) <a href="https://www.tesourodireto.com.br" target="_blank" rel="noopener">Site oficial →</a></h3>
+      <div class="meta">Regulador: CVM/Tesouro Nacional · Fundada em 2002 · Foco: Títulos públicos federais (única plataforma)</div>
+      <div class="grid">
+        <div><b>Corretagem ações</b>—</div>
+        <div><b>Renda fixa</b>Taxa B3: 0,20% a.a. até R$ 10k; 0% acima</div>
+        <div><b>Custódia</b>Inclusa na taxa B3</div>
+      </div>
+      <div class="grid" style="margin-top:8px">
+        <div style="grid-column:1/-1"><b>Diferencial</b>Acesso direto via qualquer corretora cadastrada</div>
+      </div>
+      <div class="atencao">⚠️ <b>Atenção:</b> Algumas corretoras zeram a taxa B3 nos primeiros R$ 10k</div>
+    </div>
+
+<h2>🇺🇸 Mercado dos EUA (NYSE, NASDAQ — ações, ETFs, REITs)</h2>
+
+    <div class="broker">
+      <h3>Avenue Securities <a href="https://www.avenue.us" target="_blank" rel="noopener">Site oficial →</a></h3>
+      <div class="meta">Regulador: SEC/FINRA (EUA) + Banco Central (BR) · Fundada em 2018 · Foco: Ações, ETFs, REITs e RF dos EUA</div>
+      <div class="grid">
+        <div><b>Corretagem ações</b>US$ 2,50/ordem (corretagem)</div>
+        <div><b>Renda fixa</b>Conforme produto</div>
+        <div><b>Custódia</b>Isenta</div>
+      </div>
+      <div class="grid" style="margin-top:8px">
+        <div style="grid-column:1/-1"><b>Diferencial</b>Pioneira para brasileiros nos EUA; pertence ao Itaú; site em PT</div>
+      </div>
+      <div class="atencao">⚠️ <b>Atenção:</b> Spread cambial 1,6%–1,95% (mais alto que concorrentes)</div>
+    </div>
+    <div class="broker">
+      <h3>Nomad <a href="https://www.nomadglobal.com" target="_blank" rel="noopener">Site oficial →</a></h3>
+      <div class="meta">Regulador: DriveWealth/FINRA (EUA) + BCB · Fundada em 2020 · Foco: Conta em dólar + ações, ETFs, REITs EUA</div>
+      <div class="grid">
+        <div><b>Corretagem ações</b>Isenta (corretagem zero)</div>
+        <div><b>Renda fixa</b>Conforme produto</div>
+        <div><b>Custódia</b>Isenta</div>
+      </div>
+      <div class="grid" style="margin-top:8px">
+        <div style="grid-column:1/-1"><b>Diferencial</b>Conta + cartão internacional + investimentos no mesmo app</div>
+      </div>
+      <div class="atencao">⚠️ <b>Atenção:</b> Spread cambial a partir de 1% (sobre dólar comercial)</div>
+    </div>
+    <div class="broker">
+      <h3>Inter (mercado global) <a href="https://www.bancointer.com.br/global-account/" target="_blank" rel="noopener">Site oficial →</a></h3>
+      <div class="meta">Regulador: BCB + parceiro internacional · Fundada em 2022 (Inter Global) · Foco: Conta global + ações e ETFs dos EUA</div>
+      <div class="grid">
+        <div><b>Corretagem ações</b>Isenta</div>
+        <div><b>Renda fixa</b>—</div>
+        <div><b>Custódia</b>Isenta</div>
+      </div>
+      <div class="grid" style="margin-top:8px">
+        <div style="grid-column:1/-1"><b>Diferencial</b>Conta global integrada ao banco; baixo custo para aporte mensal</div>
+      </div>
+      <div class="atencao">⚠️ <b>Atenção:</b> Plataforma mais simples; menos recursos avançados</div>
+    </div>
+    <div class="broker">
+      <h3>Interactive Brokers <a href="https://www.interactivebrokers.com" target="_blank" rel="noopener">Site oficial →</a></h3>
+      <div class="meta">Regulador: SEC/FINRA (EUA) · Fundada em 1978 · Foco: Acesso a 150+ bolsas em 33 países (EUA, Europa, Ásia)</div>
+      <div class="grid">
+        <div><b>Corretagem ações</b>US$ 0,005/ação (mín. US$ 1/ordem) ou plano Lite zero</div>
+        <div><b>Renda fixa</b>Conforme produto</div>
+        <div><b>Custódia</b>Isenta acima de US$ 100k em conta</div>
+      </div>
+      <div class="grid" style="margin-top:8px">
+        <div style="grid-column:1/-1"><b>Diferencial</b>Único caminho a mercados além dos EUA (Europa, Ásia, Hong Kong, Tóquio)</div>
+      </div>
+      <div class="atencao">⚠️ <b>Atenção:</b> Plataforma técnica em inglês; documentação fiscal de fora do BR</div>
+    </div>
+    <div class="broker">
+      <h3>C6 Bank Global <a href="https://www.c6bank.com.br" target="_blank" rel="noopener">Site oficial →</a></h3>
+      <div class="meta">Regulador: BCB + parceiro internacional · Fundada em 2019 · Foco: Conta global + ações e ETFs dos EUA</div>
+      <div class="grid">
+        <div><b>Corretagem ações</b>Isenta</div>
+        <div><b>Renda fixa</b>—</div>
+        <div><b>Custódia</b>Isenta</div>
+      </div>
+      <div class="grid" style="margin-top:8px">
+        <div style="grid-column:1/-1"><b>Diferencial</b>Conta global integrada; programa de pontos Átomos</div>
+      </div>
+      <div class="atencao">⚠️ <b>Atenção:</b> Catálogo focado em ativos mais negociados</div>
+    </div>
+
+<h2>🌍 Europa e Ásia (LSE, Frankfurt, Tóquio, Hong Kong, Shanghai)</h2>
+
+    <div class="broker">
+      <h3>Interactive Brokers <a href="https://www.interactivebrokers.com" target="_blank" rel="noopener">Site oficial →</a></h3>
+      <div class="meta">Regulador: SEC/FINRA + FCA (UK) + outros · Fundada em 1978 · Foco: Bolsas dos EUA + LSE, Frankfurt, Paris, Tóquio, Hong Kong, Singapura, Shanghai (via HK)</div>
+      <div class="grid">
+        <div><b>Corretagem ações</b>Tier (~US$ 0,005/ação); planos europeus por região</div>
+        <div><b>Renda fixa</b>Acesso a treasuries, gilts, bunds</div>
+        <div><b>Custódia</b>Isenta acima de US$ 100k</div>
+      </div>
+      <div class="grid" style="margin-top:8px">
+        <div style="grid-column:1/-1"><b>Diferencial</b>ÚNICO caminho real para brasileiros acessarem Europa, Japão, China A-shares (via Hong Kong) e Reino Unido</div>
+      </div>
+      <div class="atencao">⚠️ <b>Atenção:</b> Plataforma técnica; documentação fiscal complexa; necessário declarar bens no exterior à RFB</div>
+    </div>
+    <div class="broker">
+      <h3>Saxo Bank <a href="https://www.home.saxo" target="_blank" rel="noopener">Site oficial →</a></h3>
+      <div class="meta">Regulador: Danish FSA + FCA + MAS · Fundada em 1992 · Foco: 40+ bolsas globais, FX, derivativos</div>
+      <div class="grid">
+        <div><b>Corretagem ações</b>Variável por bolsa (NYSE ~US$ 4/ordem)</div>
+        <div><b>Renda fixa</b>Acesso amplo a bonds globais</div>
+        <div><b>Custódia</b>0,12% a.a. (mín. 5 EUR/mês)</div>
+      </div>
+      <div class="grid" style="margin-top:8px">
+        <div style="grid-column:1/-1"><b>Diferencial</b>Alternativa europeia ao IB; bom para residentes UE</div>
+      </div>
+      <div class="atencao">⚠️ <b>Atenção:</b> Pouca documentação em português; depósito mínimo varia</div>
+    </div>
+    <div class="broker">
+      <h3>DEGIRO <a href="https://www.degiro.eu" target="_blank" rel="noopener">Site oficial →</a></h3>
+      <div class="meta">Regulador: BaFin (Alemanha) / AFM (Holanda) · Fundada em 2008 · Foco: Bolsas europeias + EUA + algumas asiáticas</div>
+      <div class="grid">
+        <div><b>Corretagem ações</b>EUR 1,00 + 1 EUR conexão/bolsa/ano</div>
+        <div><b>Renda fixa</b>Sim</div>
+        <div><b>Custódia</b>Isenta</div>
+      </div>
+      <div class="grid" style="margin-top:8px">
+        <div style="grid-column:1/-1"><b>Diferencial</b>Custo baixíssimo para europeus; popular para ETFs UCITS</div>
+      </div>
+      <div class="atencao">⚠️ <b>Atenção:</b> APENAS para residentes em países europeus listados — brasileiro só pode operar se mudar residência</div>
+    </div>
+
+<p class="disc">Dados compilados de sites oficiais das corretoras, ANBIMA, B3 e
+reportagens 2025–2026 (XP, Nord Investimentos, iDinheiro, A Revista, Mobills).
+Taxas e condições mudam frequentemente — <b>sempre confirme no site oficial</b>
+antes de abrir conta. Esta página é informativa e educativa, <b>não é recomendação
+de qual corretora usar</b>. A escolha depende do seu perfil, volume aportado e
+preferência de plataforma. O FIN-BOT <b>não tem parceria comercial</b> com nenhuma
+das corretoras listadas.</p>
+</body></html>
