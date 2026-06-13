@@ -1,0 +1,41 @@
+name: FIN-BOT atualização ao vivo
+
+on:
+  schedule:
+    # Cobertura combinada dos pregões (horários em UTC):
+    # Asia/China: 01:00-08:00 UTC | Europa: 08:00-16:30 UTC
+    # B3: 13:00-20:00 UTC | NYSE: 14:30-21:00 UTC
+    # Cobrimos seg-sex de 01h a 22h UTC, a cada 15 min
+    - cron: "*/15 1-22 * * 1-5"
+    # 1x por dia em fim de semana só pra refrescar macro
+    - cron: "0 12 * * 0,6"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+# evita rodadas sobrepostas se uma demorar
+concurrency:
+  group: live-report
+  cancel-in-progress: true
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Gerar página
+        run: python finbot.py --force html
+      - name: Commit
+        run: |
+          git config user.name "fin-bot"
+          git config user.email "actions@github.com"
+          git add docs/
+          git diff --cached --quiet || git commit -m "live: $(date -u +'%F %H:%M UTC')"
+          git push

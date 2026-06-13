@@ -1,0 +1,84 @@
+# FIN-BOT v3 — configuração multimercado
+period: "2y"
+backtest_period: "5y"
+min_score: 35
+cdi_anual: 0.105
+aporte_mensal: 2000
+
+markets:
+  brasil:
+    label: "🇧🇷 Brasil"
+    moeda: "R$"
+    watchlist: [BOVA11.SA, SMAL11.SA, IVVB11.SA, B5P211.SA, ITUB4.SA, WEGE3.SA, VALE3.SA, PETR4.SA, BBSE3.SA, HGLG11.SA, MXRF11.SA, KNRI11.SA, BTC-USD]
+    target_weights:
+      BOVA11.SA: 0.12
+      SMAL11.SA: 0.05
+      IVVB11.SA: 0.18
+      B5P211.SA: 0.15
+      ITUB4.SA: 0.08
+      WEGE3.SA: 0.08
+      VALE3.SA: 0.04
+      PETR4.SA: 0.04
+      BBSE3.SA: 0.04
+      HGLG11.SA: 0.08
+      MXRF11.SA: 0.05
+      KNRI11.SA: 0.05
+      BTC-USD: 0.04
+
+  eua:
+    label: "🇺🇸 EUA"
+    moeda: "US$"
+    watchlist: [VOO, QQQ, DIA, IWM, VXUS, AAPL, MSFT, GOOGL, AMZN, NVDA, META, TSLA, JPM, XOM, JNJ, SCHD]
+    target_weights:
+      VOO: 0.28
+      QQQ: 0.15
+      VXUS: 0.10
+      SCHD: 0.10
+      AAPL: 0.05
+      MSFT: 0.05
+      GOOGL: 0.05
+      AMZN: 0.05
+      NVDA: 0.05
+      META: 0.03
+      TSLA: 0.02
+      JPM: 0.02
+      XOM: 0.02
+      JNJ: 0.01
+      DIA: 0.01
+      IWM: 0.01
+
+  europa:
+    label: "🇪🇺 Europa"
+    moeda: "€"
+    watchlist: [EXS1.DE, IMEU.AS, VEUR.AS, ASML, SAP, NVO, SHEL, HSBC, SAN, NESN.SW, ROG.SW]
+    target_weights:
+      IMEU.AS: 0.25
+      VEUR.AS: 0.22
+      EXS1.DE: 0.10
+      ASML: 0.10
+      SAP: 0.07
+      NVO: 0.07
+      NESN.SW: 0.06
+      ROG.SW: 0.05
+      SHEL: 0.04
+      HSBC: 0.02
+      SAN: 0.02
+
+  china:
+    label: "🇨🇳 China & Ásia"
+    moeda: "US$"
+    watchlist: [MCHI, FXI, KWEB, ASHR, EWH, EWT, INDA, BABA, JD, PDD, BIDU, TCEHY, TSM]
+    target_weights:
+      MCHI: 0.18
+      KWEB: 0.15
+      ASHR: 0.10
+      INDA: 0.10
+      TSM: 0.12
+      BABA: 0.08
+      TCEHY: 0.08
+      JD: 0.05
+      PDD: 0.05
+      BIDU: 0.03
+      EWT: 0.03
+      EWH: 0.02
+      FXI: 0.01

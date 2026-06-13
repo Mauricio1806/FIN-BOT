@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+data/finbot.db
+.venv/
+venv/

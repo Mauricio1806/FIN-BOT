@@ -1,0 +1,213 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="refresh" content="900">
+<title>FIN-BOT — Painel global</title><style>
+:root{color-scheme:dark}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:#0b1020;
+  color:#e2e8f0;padding:20px;max-width:1100px;margin:0 auto;line-height:1.55}
+h1{font-size:1.6rem;margin-bottom:4px}
+h2{font-size:1.1rem;margin:24px 0 12px;color:#93c5fd}
+.sub{color:#64748b;font-size:.85rem;margin-bottom:16px}
+.live{display:inline-flex;align-items:center;gap:6px;font-size:.75rem;color:#86efac;
+  background:#14532d33;padding:3px 10px;border-radius:99px;margin-left:8px}
+.live::before{content:"";width:8px;height:8px;background:#22c55e;border-radius:50%;
+  animation:pulse 1.6s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin:18px 0 20px;position:sticky;top:0;
+  background:#0b1020;padding:10px 0;z-index:10;border-bottom:1px solid #1e2a4a}
+.tab{padding:10px 18px;border-radius:99px;background:#111a33;border:1px solid #1e2a4a;
+  color:#cbd5e1;font-size:.9rem;font-weight:600;cursor:pointer;transition:all .15s}
+.tab:hover{border-color:#3b82f6;color:#fff}
+.tab.active{background:#3b82f6;color:#fff;border-color:#3b82f6}
+.market{display:none}.market.active{display:block;animation:fade .2s}
+@keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px}
+.card{background:#111a33;border:1px solid #1e2a4a;border-radius:12px;padding:12px 14px}
+.card .l{font-size:.7rem;color:#64748b;text-transform:uppercase;letter-spacing:.04em}
+.card .v{font-size:1.3rem;font-weight:700;margin-top:3px}
+.regime{display:inline-block;padding:4px 14px;border-radius:99px;font-size:.78rem;font-weight:700;
+  margin-bottom:14px}
+.regime.EXPANSIVO{background:#14532d;color:#86efac}
+.regime.MISTO{background:#713f12;color:#fde047}
+.regime.DEFENSIVO{background:#7f1d1d;color:#fca5a5}
+.insight{background:#111a33;border:1px solid #1e2a4a;border-left:3px solid #3b82f6;
+  border-radius:10px;padding:11px 15px;margin-bottom:9px;font-size:.9rem}
+.insight b{color:#fff}
+table{width:100%;border-collapse:collapse;background:#111a33;border-radius:12px;overflow:hidden;
+  font-size:.87rem;margin-bottom:8px}
+th{background:#16213f;text-align:left;padding:9px 11px;font-size:.7rem;color:#94a3b8;
+  text-transform:uppercase;letter-spacing:.04em}
+td{padding:9px 11px;border-top:1px solid #1e2a4a}
+tr:hover td{background:#16213f}
+.badge{display:inline-block;padding:2px 9px;border-radius:99px;font-size:.68rem;font-weight:700;color:#0b1020}
+.bar{background:#1e2a4a;border-radius:99px;height:7px;width:90px;display:inline-block;vertical-align:middle}
+.bar i{display:block;height:7px;border-radius:99px}
+.sig{background:#111a33;border:1px solid #1e2a4a;border-left:3px solid #eab308;
+  border-radius:10px;padding:9px 13px;margin-bottom:7px;font-size:.86rem}
+.right{text-align:right}.num{font-variant-numeric:tabular-nums}
+.disc{margin-top:28px;color:#475569;font-size:.76rem;line-height:1.5}
+@media(max-width:640px){body{padding:12px}td,th{padding:7px 6px;font-size:.76rem}
+  .bar{width:55px}h1{font-size:1.3rem}.tab{padding:8px 14px;font-size:.82rem}}
+</style></head><body>
+<h1>📈 FIN-BOT <span class="live">AO VIVO</span></h1>
+<p class="sub">Atualizado em 13/06/2026 14:14 (horário de Salvador) · próx. atualização em até 15 min</p>
+<div class="tabs"><button class="tab active" onclick="showMarket('brasil',this)">🇧🇷 Brasil</button><button class="tab" onclick="showMarket('eua',this)">🇺🇸 EUA</button><button class="tab" onclick="showMarket('europa',this)">🇪🇺 Europa</button><button class="tab" onclick="showMarket('china',this)">🇨🇳 China & Ásia</button></div>
+<div id="m-brasil" class="market active">
+    
+    <h2>🌎 Macro Brasil (Banco Central)</h2>
+    <div class="cards">
+      <div class="card"><div class="l">Selic</div><div class="v">14.50%</div></div>
+      <div class="card"><div class="l">CDI</div><div class="v">14.65%</div></div>
+      <div class="card"><div class="l">IPCA 12m</div><div class="v">4.39%</div></div>
+      <div class="card"><div class="l">Juro real</div><div class="v">9.68%</div></div>
+      <div class="card"><div class="l">Dólar</div><div class="v">R$ 5.32</div></div>
+    </div>
+    <h2>🧠 Leitura do mercado</h2>
+          <span class="regime DEFENSIVO">DEFENSIVO</span><div class="cards">
+          <div class="card"><div class="l">Score médio</div><div class="v">54</div></div>
+          <div class="card"><div class="l">Em alta</div><div class="v">1/3</div></div>
+          <div class="card"><div class="l">Em baixa</div><div class="v">2/3</div></div>
+          <div class="card"><div class="l">Laterais</div><div class="v">0/3</div></div>
+        </div>
+          <div style="margin-top:14px"><div class="insight">🛡️ <b>Mercado defensivo</b>: apenas 33% em alta. Aporte cauteloso, priorize ativos com score alto e tendência clara; considere fortalecer caixa/renda fixa neste mês.</div><div class="insight">💎 <b>Descontados vs máxima de 52 semanas</b>: <b>BTC-USD</b> (-39%). Score técnico ainda saudável apesar do recuo — candidatos a aporte por valor relativo.</div><div class="insight">🏆 <b>Top 3 por condição técnica</b>: <b>BOVA11.SA</b> (score 67.0), <b>BTC-USD</b> (score 50.0), <b>IVVB11.SA</b> (score 44.0). Não significa 'comprar agora' — significa que a estrutura técnica está mais saudável que a média dos pares neste momento.</div><div class="insight">🐌 <b>Piores condições técnicas</b>: <b>IVVB11.SA</b> (score 44.0), <b>BTC-USD</b> (score 50.0), <b>BOVA11.SA</b> (score 67.0). Reavaliar tese fundamentalista ou reduzir peso neste mês.</div></div>
+    <h2>🏆 Ranking</h2>
+    <table><tr><th>#</th><th>Ticker</th><th class="right">Preço</th><th>Tendência</th>
+    <th>Score</th><th class="right">RSI</th><th class="right">vs Máx 52s</th></tr><tr><td>1</td><td><b>BOVA11.SA</b></td>
+        <td class="right num">R$ 273.04</td>
+        <td><span class="badge" style="background:#4ade80">ALTA</span></td>
+        <td><span class="bar"><i style="width:67.0%;background:#16a34a"></i></span>
+            <b class="num"> 67.0</b></td>
+        <td class="right num">51.1</td>
+        <td class="right num">-3.3%</td></tr><tr><td>2</td><td><b>BTC-USD</b></td>
+        <td class="right num">R$ 71.26</td>
+        <td><span class="badge" style="background:#dc2626">BAIXA FORTE</span></td>
+        <td><span class="bar"><i style="width:50.0%;background:#eab308"></i></span>
+            <b class="num"> 50.0</b></td>
+        <td class="right num">41.7</td>
+        <td class="right num">-38.8%</td></tr><tr><td>3</td><td><b>IVVB11.SA</b></td>
+        <td class="right num">R$ 91.94</td>
+        <td><span class="badge" style="background:#dc2626">BAIXA FORTE</span></td>
+        <td><span class="bar"><i style="width:44.0%;background:#f97316"></i></span>
+            <b class="num"> 44.0</b></td>
+        <td class="right num">38.1</td>
+        <td class="right num">-22.3%</td></tr></table>
+    <h2>⚡ Sinais técnicos</h2><div class="sig"><b>BTC-USD</b> — MACD cruzou para cima (momentum virando)</div>
+    
+    </div><div id="m-eua" class="market">
+    
+    <h2>🧠 Leitura do mercado</h2>
+          <span class="regime EXPANSIVO">EXPANSIVO</span><div class="cards">
+          <div class="card"><div class="l">Score médio</div><div class="v">65</div></div>
+          <div class="card"><div class="l">Em alta</div><div class="v">2/3</div></div>
+          <div class="card"><div class="l">Em baixa</div><div class="v">1/3</div></div>
+          <div class="card"><div class="l">Laterais</div><div class="v">0/3</div></div>
+        </div>
+          <div style="margin-top:14px"><div class="insight">📈 <b>Mercado expansivo</b>: 67% dos ativos em tendência de alta. Cenário favorável para aportes em renda variável; foco em qualidade, não em barganha.</div><div class="insight">🟢 <b>Golden Cross recente</b>: <b>AAPL</b>. Sinal clássico de virada estrutural — historicamente precede períodos de alta.</div><div class="insight">🏆 <b>Top 3 por condição técnica</b>: <b>VOO</b> (score 81.0), <b>AAPL</b> (score 73.0), <b>NVDA</b> (score 41.0). Não significa 'comprar agora' — significa que a estrutura técnica está mais saudável que a média dos pares neste momento.</div><div class="insight">🐌 <b>Piores condições técnicas</b>: <b>NVDA</b> (score 41.0), <b>AAPL</b> (score 73.0), <b>VOO</b> (score 81.0). Reavaliar tese fundamentalista ou reduzir peso neste mês.</div></div>
+    <h2>🏆 Ranking</h2>
+    <table><tr><th>#</th><th>Ticker</th><th class="right">Preço</th><th>Tendência</th>
+    <th>Score</th><th class="right">RSI</th><th class="right">vs Máx 52s</th></tr><tr><td>1</td><td><b>VOO</b></td>
+        <td class="right num">US$ 111.38</td>
+        <td><span class="badge" style="background:#16a34a">ALTA FORTE</span></td>
+        <td><span class="bar"><i style="width:81.0%;background:#16a34a"></i></span>
+            <b class="num"> 81.0</b></td>
+        <td class="right num">66.9</td>
+        <td class="right num">-1.0%</td></tr><tr><td>2</td><td><b>AAPL</b></td>
+        <td class="right num">US$ 105.00</td>
+        <td><span class="badge" style="background:#16a34a">ALTA FORTE</span></td>
+        <td><span class="bar"><i style="width:73.0%;background:#16a34a"></i></span>
+            <b class="num"> 73.0</b></td>
+        <td class="right num">65.7</td>
+        <td class="right num">-4.8%</td></tr><tr><td>3</td><td><b>NVDA</b></td>
+        <td class="right num">US$ 77.59</td>
+        <td><span class="badge" style="background:#dc2626">BAIXA FORTE</span></td>
+        <td><span class="bar"><i style="width:41.0%;background:#f97316"></i></span>
+            <b class="num"> 41.0</b></td>
+        <td class="right num">33.8</td>
+        <td class="right num">-20.0%</td></tr></table>
+    <h2>⚡ Sinais técnicos</h2><div class="sig"><b>AAPL</b> — Preço colado na banda superior de Bollinger</div><div class="sig"><b>AAPL</b> — GOLDEN CROSS recente (SMA50 cruzou SMA200 p/ cima)</div><div class="sig"><b>NVDA</b> — Preço colado na banda inferior de Bollinger</div>
+    
+    </div><div id="m-europa" class="market">
+    
+    <h2>🧠 Leitura do mercado</h2>
+          <span class="regime DEFENSIVO">DEFENSIVO</span><div class="cards">
+          <div class="card"><div class="l">Score médio</div><div class="v">65</div></div>
+          <div class="card"><div class="l">Em alta</div><div class="v">1/3</div></div>
+          <div class="card"><div class="l">Em baixa</div><div class="v">0/3</div></div>
+          <div class="card"><div class="l">Laterais</div><div class="v">2/3</div></div>
+        </div>
+          <div style="margin-top:14px"><div class="insight">🛡️ <b>Mercado defensivo</b>: apenas 33% em alta. Aporte cauteloso, priorize ativos com score alto e tendência clara; considere fortalecer caixa/renda fixa neste mês.</div><div class="insight">🟢 <b>Golden Cross recente</b>: <b>ASML</b>. Sinal clássico de virada estrutural — historicamente precede períodos de alta.</div><div class="insight">🏆 <b>Top 3 por condição técnica</b>: <b>ASML</b> (score 81.0), <b>SHEL</b> (score 61.0), <b>SAP</b> (score 53.0). Não significa 'comprar agora' — significa que a estrutura técnica está mais saudável que a média dos pares neste momento.</div><div class="insight">🐌 <b>Piores condições técnicas</b>: <b>SAP</b> (score 53.0), <b>SHEL</b> (score 61.0), <b>ASML</b> (score 81.0). Reavaliar tese fundamentalista ou reduzir peso neste mês.</div></div>
+    <h2>🏆 Ranking</h2>
+    <table><tr><th>#</th><th>Ticker</th><th class="right">Preço</th><th>Tendência</th>
+    <th>Score</th><th class="right">RSI</th><th class="right">vs Máx 52s</th></tr><tr><td>1</td><td><b>ASML</b></td>
+        <td class="right num">€ 80.88</td>
+        <td><span class="badge" style="background:#16a34a">ALTA FORTE</span></td>
+        <td><span class="bar"><i style="width:81.0%;background:#16a34a"></i></span>
+            <b class="num"> 81.0</b></td>
+        <td class="right num">62.2</td>
+        <td class="right num">-13.7%</td></tr><tr><td>2</td><td><b>SHEL</b></td>
+        <td class="right num">€ 147.16</td>
+        <td><span class="badge" style="background:#eab308">LATERAL</span></td>
+        <td><span class="bar"><i style="width:61.0%;background:#eab308"></i></span>
+            <b class="num"> 61.0</b></td>
+        <td class="right num">41.7</td>
+        <td class="right num">-5.0%</td></tr><tr><td>3</td><td><b>SAP</b></td>
+        <td class="right num">€ 76.24</td>
+        <td><span class="badge" style="background:#eab308">LATERAL</span></td>
+        <td><span class="bar"><i style="width:53.0%;background:#eab308"></i></span>
+            <b class="num"> 53.0</b></td>
+        <td class="right num">60.6</td>
+        <td class="right num">-20.6%</td></tr></table>
+    <h2>⚡ Sinais técnicos</h2><div class="sig"><b>ASML</b> — GOLDEN CROSS recente (SMA50 cruzou SMA200 p/ cima)</div><div class="sig"><b>SHEL</b> — Preço colado na banda inferior de Bollinger</div><div class="sig"><b>SAP</b> — -21% abaixo da máx. 52s, mas tendência se sustenta</div>
+    
+    </div><div id="m-china" class="market">
+    
+    <h2>🧠 Leitura do mercado</h2>
+          <span class="regime DEFENSIVO">DEFENSIVO</span><div class="cards">
+          <div class="card"><div class="l">Score médio</div><div class="v">57</div></div>
+          <div class="card"><div class="l">Em alta</div><div class="v">1/3</div></div>
+          <div class="card"><div class="l">Em baixa</div><div class="v">2/3</div></div>
+          <div class="card"><div class="l">Laterais</div><div class="v">0/3</div></div>
+        </div>
+          <div style="margin-top:14px"><div class="insight">🛡️ <b>Mercado defensivo</b>: apenas 33% em alta. Aporte cauteloso, priorize ativos com score alto e tendência clara; considere fortalecer caixa/renda fixa neste mês.</div><div class="insight">🏆 <b>Top 3 por condição técnica</b>: <b>TSM</b> (score 81.0), <b>BABA</b> (score 46.0), <b>MCHI</b> (score 44.0). Não significa 'comprar agora' — significa que a estrutura técnica está mais saudável que a média dos pares neste momento.</div><div class="insight">🐌 <b>Piores condições técnicas</b>: <b>MCHI</b> (score 44.0), <b>BABA</b> (score 46.0), <b>TSM</b> (score 81.0). Reavaliar tese fundamentalista ou reduzir peso neste mês.</div></div>
+    <h2>🏆 Ranking</h2>
+    <table><tr><th>#</th><th>Ticker</th><th class="right">Preço</th><th>Tendência</th>
+    <th>Score</th><th class="right">RSI</th><th class="right">vs Máx 52s</th></tr><tr><td>1</td><td><b>TSM</b></td>
+        <td class="right num">US$ 111.38</td>
+        <td><span class="badge" style="background:#16a34a">ALTA FORTE</span></td>
+        <td><span class="bar"><i style="width:81.0%;background:#16a34a"></i></span>
+            <b class="num"> 81.0</b></td>
+        <td class="right num">66.9</td>
+        <td class="right num">-1.0%</td></tr><tr><td>2</td><td><b>BABA</b></td>
+        <td class="right num">US$ 98.13</td>
+        <td><span class="badge" style="background:#dc2626">BAIXA FORTE</span></td>
+        <td><span class="bar"><i style="width:46.0%;background:#f97316"></i></span>
+            <b class="num"> 46.0</b></td>
+        <td class="right num">45.4</td>
+        <td class="right num">-27.8%</td></tr><tr><td>3</td><td><b>MCHI</b></td>
+        <td class="right num">US$ 66.76</td>
+        <td><span class="badge" style="background:#dc2626">BAIXA FORTE</span></td>
+        <td><span class="bar"><i style="width:44.0%;background:#f97316"></i></span>
+            <b class="num"> 44.0</b></td>
+        <td class="right num">33.8</td>
+        <td class="right num">-30.4%</td></tr></table>
+    <h2>⚡ Sinais técnicos</h2><div class="sig"><b>BABA</b> — MACD cruzou para cima (momentum virando)</div>
+    
+    </div>
+<p class="disc">Score 0–100 = condição técnica relativa (40 pts tendência, 20 MACD, 20 RSI,
+10 risco/ATR, 10 volume), calibrado para aportes de longo prazo. Página gerada por pipeline
+automático a cada 15 min em horário de pregão — <b>não é recomendação de investimento</b>.
+Fontes: Yahoo Finance, Banco Central do Brasil, Tesouro Direto. Rentabilidade passada não
+garante resultados futuros.</p>
+<script>
+function showMarket(key,el){
+  document.querySelectorAll('.market').forEach(m=>m.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('m-'+key).classList.add('active');
+  el.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+// auto-refresh a cada 5 min (a página em si é regenerada a cada 15 min pelo workflow)
+setTimeout(()=>location.reload(),300000);
+</script>
+</body></html>
