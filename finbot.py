@@ -140,31 +140,39 @@ def cmd_ofertas(args, cfg):
     print(regua_ofertas(cdi_aa))
     print("\n⚠ Dados oficiais + matemática de IR. Não é recomendação de investimento.")
 
-
 def cmd_html(args, cfg):
-    """Gera uma página HTML por mercado em docs/. Brasil vira docs/index.html."""
+    """Gera docs/index.html (página única com 4 abas) + docs/corretoras.html."""
     try:
         macro = get_macro()
     except Exception as exc:
         print(f"[aviso] macro indisponível: {exc}")
         macro = None
     markets = cfg.get("markets", {})
-    if not markets:  # fallback compat. com config antigo
+    if not markets:
         markets = {"brasil": {"label": "🇧🇷 Brasil", "moeda": "R$",
                               "watchlist": cfg.get("watchlist", []),
-                              "target_weights": cfg.get("target_weights") or cfg.get("markets", {}).get("brasil", {}).get("target_weights")}}
+                              "target_weights": cfg.get("target_weights")}}
     valor = args.valor if args.valor else cfg.get("aporte_mensal")
+    market_data = {}
     for key, conf in markets.items():
         print(f"\n--- Mercado: {conf['label']} ---")
         try:
-            results = screen(conf["watchlist"], period=cfg.get("period", "2y"), force=args.force)
+            results = screen(conf["watchlist"], period=cfg.get("period", "2y"),
+                             force=args.force)
         except Exception as exc:
             print(f"[erro] {key}: {exc}")
             continue
         plan = None
         if valor and conf.get("target_weights"):
-            plan = allocate(results, amount=valor, target_weights=conf.get("target_weights"),
+            plan = allocate(results, amount=valor,
+                            target_weights=conf.get("target_weights"),
                             tilt=args.tilt, min_score=cfg.get("min_score", 35))
+        market_data[key] = (conf, results, plan)
+    html = build_full_page(market_data, macro)
+    path = save_html(html, "index.html")
+    print(f"\n✅ Página principal: {path}")
+    corr = save_brokers_page()
+    print(f"✅ Página de corretoras: {corr}")
 
 
 
