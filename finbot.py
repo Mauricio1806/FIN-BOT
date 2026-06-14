@@ -165,10 +165,7 @@ def cmd_html(args, cfg):
         if valor and conf.get("target_weights"):
             plan = allocate(results, amount=valor, target_weights=conf.get("target_weights"),
                             tilt=args.tilt, min_score=cfg.get("min_score", 35))
-        html = build_html(key, conf, results, macro, plan, markets)
-        filename = _MARKET_FILES.get(key, f"{key}.html")
-        path = save_html(html, filename)
-        print(f"  ✅ {path}")
+
 
 
 def main():
