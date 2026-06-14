@@ -5,6 +5,7 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 from .trends import Analysis
 from .insights import market_breadth, insights_text
+from .assets_meta import get_meta
 
 DOCS_DIR = Path(__file__).resolve().parent.parent / "docs"
 
@@ -61,6 +62,8 @@ tr:hover td{background:#16213f}
 .sig{background:#111a33;border:1px solid #1e2a4a;border-left:3px solid #eab308;
   border-radius:10px;padding:9px 13px;margin-bottom:7px;font-size:.86rem}
 .right{text-align:right}.num{font-variant-numeric:tabular-nums}
+.meta-asset{font-size:.78rem;color:#94a3b8;font-weight:400}
+.meta-asset-sub{font-size:.7rem;color:#64748b;display:inline-block;margin-top:2px}
 .disc{margin-top:28px;color:#475569;font-size:.76rem;line-height:1.5}
 @media(max-width:640px){body{padding:12px}td,th{padding:7px 6px;font-size:.76rem}
   .bar{width:55px}h1{font-size:1.3rem}.tab{padding:8px 14px;font-size:.82rem}}
@@ -124,7 +127,10 @@ def _market_section(key: str, conf: dict, analyses: list[Analysis], plan: dict |
     for i, a in enumerate(analyses, 1):
         lbl, color = _TREND_BADGE.get(a.trend, (a.trend, "#64748b"))
         sc = _score_color(a.score)
-        rows += f"""<tr><td>{i}</td><td><b>{a.ticker}</b></td>
+        meta = get_meta(a.ticker)
+        rows += f"""<tr><td>{i}</td>
+        <td><b>{a.ticker}</b><br><span class="meta-asset">{meta['nome']}</span>
+            <br><span class="meta-asset-sub">{meta['exchange']} · {meta['setor']}</span></td>
         <td class="right num">{moeda} {a.price:,.2f}</td>
         <td><span class="badge" style="background:{color}">{lbl}</span></td>
         <td><span class="bar"><i style="width:{a.score}%;background:{sc}"></i></span>
@@ -179,7 +185,8 @@ def build_full_page(market_data: dict, macro: dict | None = None) -> str:
 <meta http-equiv="refresh" content="900">
 <title>FIN-BOT — Painel global</title><style>{_CSS}</style></head><body>
 <h1>📈 FIN-BOT <span class="live">AO VIVO</span></h1>
-<p class="sub">Atualizado em {now} (horário de Salvador) · próx. atualização em até 15 min · <a href="corretoras.html" style="color:#60a5fa;text-decoration:none;border:1px solid #1e2a4a;padding:4px 10px;border-radius:6px;margin-left:6px">🏦 Ver corretoras</a></p>
+<p class="sub">Atualizado em {now} (horário de Salvador) · próx. atualização em até 15 min · <a href="corretoras.html" style="color:#60a5fa;text-decoration:none;border:1px solid #1e2a4a;padding:4px 10px;border-radius:6px;margin-left:6px">🏦 Corretoras</a>
+<a href="https://github.com/Mauricio1806/FIN-BOT/actions/workflows/daily-report.yml" target="_blank" style="color:#86efac;text-decoration:none;border:1px solid #166534;padding:4px 10px;border-radius:6px;margin-left:6px">🔄 Forçar atualização</a></p>
 <div class="tabs">{tabs}</div>
 {sections}
 <p class="disc">Score 0–100 = condição técnica relativa (40 pts tendência, 20 MACD, 20 RSI,
